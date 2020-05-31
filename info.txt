@@ -1,0 +1,34 @@
+ruby -v
+rails -v
+gem uninstall pg 
+gem install pg --pre
+gem list pg
+gem install tzinfo
+gem install tzinfo-data
+gem list tzinfo-data
+gem list puma
+gem uninstall puma
+gem install puma -- --with-opt-dir=C:\openssl-1.0.2l-win64
+bundle update
+bundle install
+rails s
+rake db:migrate --trace
+
+which psql
+psql --username=postgres --no-password
+heroku pg:info
+watch heroku pg:info
+heroku pg:psql
+heroku pg:psql postgresql-octagonal-38756
+#heroku pg:pull DATABASE_URL heroku-rails --app heroku-ruby-getting-started
+PGUSER=postgres PGPASSWORD=postgres heroku pg:pull postgresql-octagonal-38756 heroku-rails --app heroku-ruby-getting-started
+heroku pg:credentials:url postgresql-octagonal-38756
+
+mkdir -p app/assets/config
+touch app/assets/config/manifest.js
+
+Then copy and paste the following into the manifest.js file you just created:
+
+//= link_tree ../images
+//= link_directory ../javascripts .js
+//= link_directory ../stylesheets .css
